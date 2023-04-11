@@ -73,6 +73,10 @@ namespace CustomFilter.Utilities
                     {
                         prop.SetValue(context.ActionArguments[modelName], result.MyTrim());
                     }
+                    else
+                    {
+                        prop.SetValue(context.ActionArguments[modelName], "NULL");
+                    }
                 }
                 else if (prop.PropertyType.IsClass && prop.PropertyType != typeof(object))
                 {

@@ -1,4 +1,6 @@
-﻿namespace CustomFilter.Utilities
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace CustomFilter.Utilities
 {
     public class Helpers
     {
@@ -15,6 +17,10 @@
                     {
                         //prop.SetValue(obj, value.Trim());
                         prop.SetValue(obj, value.MyTrim());
+                    }
+                    else
+                    {
+                        prop.SetValue(obj, "NULL");
                     }
                 }
                 else if (prop.PropertyType.IsClass && prop.PropertyType != typeof(object))
