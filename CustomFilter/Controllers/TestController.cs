@@ -4,9 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CustomFilter.Controllers
 {
+    [TrimStringProperties]
     public class TestController : Controller
     {
-        [TrimStringProperties]
+        
         public IActionResult MyTestAction(TestModel testModel)
         {
             return Content($"{testModel.StringProp} \n" +
